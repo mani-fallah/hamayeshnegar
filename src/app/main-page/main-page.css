@@ -1,0 +1,15 @@
+/* app-main.component.scss */
+.layout-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+app-header {
+  flex-shrink: 0; /* هدر کوچک نشود */
+}
+
+.main-content {
+  flex: 1 1 auto; /* تمام فضای باقی‌مانده */
+  overflow-y: auto;
+}

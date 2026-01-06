@@ -1,0 +1,186 @@
+/* HERO */
+.hero{
+  position: relative;
+  min-height: 240px;
+  background: url("/assets/images/hero.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.hero-overlay{
+  position:absolute; inset:0;
+  background: linear-gradient(90deg, rgba(17,24,39,.85), rgba(17,24,39,.35));
+}
+
+.hero-inner{ position:relative; padding: 2.5rem 0; }
+.hero-title{ font-size: 1.35rem; line-height: 1.9; font-weight: 800; }
+.hero-subtitle{ opacity: .9; }
+
+/* نوار کوچک زیر بنر */
+.mini-bar{
+  background: #f3f6fb;
+  border-bottom: 1px solid #e5e7eb;
+  padding: .55rem 0;
+}
+.mini-item{ font-size:.9rem; color:#374151; }
+.mini-label{ color:#6b7280; margin-left:.25rem; }
+.mini-value{ font-weight:600; }
+
+/* پس‌زمینه کلی */
+.page-body{ background: #f7f9fc; }
+
+/* پنل‌ها */
+.panel{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow:hidden;
+  box-shadow: 0 6px 16px rgba(15,23,42,.06);
+}
+
+.panel-header{
+  background: #2c3e50;
+  color:#fff;
+  padding: .65rem .9rem;
+  font-weight: 700;
+  font-size: .95rem;
+}
+
+.panel-body{ padding: .9rem; }
+
+/* لوگوها */
+.logos{ display:flex; flex-direction:column; gap:.75rem; }
+.logo{
+  width:100%;
+  min-height:100px;
+  object-fit: cover !important;
+  background:#fff;
+  border:1px solid #eef2f7;
+  border-radius: 10px;
+  padding:.4rem;
+}
+
+/* تیتر بخش وسط */
+.section-title{
+  background:#2c3e50;
+  color:#fff;
+  border-radius: 12px;
+  padding: .6rem .9rem;
+  font-weight: 800;
+  margin-bottom: .75rem;
+}
+
+/* کارت خبر */
+.news-card{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow:hidden;
+  display:flex;
+  gap: .9rem;
+  padding: .9rem;
+  margin-bottom: .75rem;
+  box-shadow: 0 6px 16px rgba(15,23,42,.05);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.news-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(15,23,42,.10);
+}
+
+.news-thumb{
+  width: 86px;
+  min-width: 86px;
+  height: 86px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #60a5fa, #2563eb);
+}
+
+.news-title{ font-weight:800; color:#111827; margin-bottom:.35rem; }
+.news-text{ color:#4b5563; font-size:.92rem; line-height:1.8; }
+.news-meta{ display:flex; align-items:center; justify-content:space-between; gap:.75rem; }
+
+.badge-soft{
+  background: rgba(37,99,235,.10);
+  color:#2563eb;
+  border-radius: 999px;
+  padding: .2rem .6rem;
+  font-size: .8rem;
+  font-weight: 700;
+}
+
+.news-link{ font-size:.88rem; text-decoration:none; font-weight:700; }
+
+/* تاریخ‌های مهم */
+.date-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:.45rem 0;
+  border-bottom: 1px dashed #e5e7eb;
+  font-size:.9rem;
+}
+.date-row > span:first-child{
+  min-width: 0;          /* ✅ اجازه بده متن سمت چپ جمع بشه */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;   /* ✅ عنوان تاریخ یک‌خطی شود */
+}
+.date-row:last-child{ border-bottom:none; }
+
+.date-pill{
+  background: rgba(16,185,129,.10);
+  color:#059669;
+  border-radius: 10px;
+  padding: .15rem .5rem;
+  font-weight: 800;
+  font-size:.82rem;
+
+  white-space: nowrap;   /* ✅ جلوگیری از wrap */
+  display: inline-flex;  /* ✅ پایدارتر */
+  align-items: center;
+  flex-shrink: 0;        /* ✅ اگر داخل flex هست */
+}
+
+
+/* موبایل */
+@media (max-width: 575.98px){
+  .hero{ min-height: 210px; }
+  .hero-title{ font-size: 1.05rem; }
+  .news-thumb{ width: 70px; min-width:70px; height:70px; }
+}
+
+.important-dates{
+  max-height: 200px;     /* این عدد را به سلیقه خودت تنظیم کن */
+  overflow-y: auto;      /* اسکرول فقط وقتی لازم شد */
+  overflow-x: hidden;
+}
+
+/* اسکرول قشنگ‌تر (اختیاری) */
+.important-dates{
+  scrollbar-width: thin; /* Firefox */
+}
+.important-dates::-webkit-scrollbar{
+  width: 8px;
+}
+.important-dates::-webkit-scrollbar-thumb{
+  background: rgba(17,24,39,.25);
+  border-radius: 999px;
+}
+.important-dates::-webkit-scrollbar-track{
+  background: transparent;
+}
+
+/* اگر در موبایل خواستی ارتفاع کمتر شود */
+@media (max-width: 575.98px){
+  .important-dates{ max-height: 220px; }
+}
+
+@media (max-width: 991.98px) {
+  .logos .logo{
+    min-height: 80px;
+    object-fit: contain !important;
+  }
+}

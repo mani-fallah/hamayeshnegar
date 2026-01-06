@@ -1,0 +1,75 @@
+.conference-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.conference-card:hover {
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+  transform: translateY(-2px);
+}
+
+.poster-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.poster-wrapper img {
+  max-height: 140px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.conf-title {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  font-weight: 600;
+  color: #111827;
+}
+
+.conf-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.meta-item {
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
+.meta-label {
+  font-weight: 500;
+  margin-left: 0.25rem;
+}
+
+/* Badge های لطیف‌تر */
+.bg-soft-primary {
+  background-color: rgba(37, 99, 235, 0.08);
+}
+
+.bg-soft-success {
+  background-color: rgba(16, 185, 129, 0.08);
+}
+
+.text-primary { color: #2563eb !important; }
+.text-success { color: #059669 !important; }
+
+/* ریسپانسیو */
+@media (max-width: 575.98px) {
+  .conference-card {
+    padding: 0.75rem 0.9rem;
+  }
+
+  .poster-wrapper img {
+    max-height: 110px;
+  }
+
+  .conf-title {
+    font-size: 0.9rem;
+  }
+}

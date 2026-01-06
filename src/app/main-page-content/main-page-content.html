@@ -1,0 +1,47 @@
+@for (item of allConferences; track item.id) {
+  <div class="conference-card shadow-sm">
+    <div class="row g-3 align-items-stretch">
+      <!-- تصویر پوستر -->
+      <div class="col-12 col-md-3">
+        <div class="poster-wrapper">
+          <img src="data:image/jpeg;base64,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" alt="پوستر همایش" class="img-fluid rounded">
+        </div>
+      </div>
+
+      <!-- متن و اطلاعات -->
+      <div class="col-8 col-md-6">
+        <h5 class="conf-title mb-2">
+          {{item.title}}
+        </h5>
+        <h6 class="conf-title mb-2">
+          {{item.short_description}}
+        </h6>
+        <div class="conf-meta">
+          <div class="meta-item">
+            <span class="meta-label">تاریخ شروع:</span>
+            <span class="badge bg-soft-primary text-primary">{{item.start_date}}</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">تاریخ پایان:</span>
+            <span class="badge bg-soft-primary text-primary">{{item.end_date}}</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">وضعیت:</span>
+            <span class="badge bg-soft-success text-success">{{item.status}}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- اکشن‌ها -->
+      <div class="col-12 col-md-3 d-flex flex-column justify-content-between align-items-md-end">
+        <div class="text-md-end mb-2 mb-md-0 d-flex align-items-md-end justify-content-end h-100">
+
+          <button [routerLink]="['/conference',item.slug]" class="btn btn-primary btn-sm w-100">
+            وب‌سایت همایش
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+}
