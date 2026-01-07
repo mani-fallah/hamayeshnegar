@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {CommonModule, NgOptimizedImage} from '@angular/common';
-import {Subject, switchMap, takeUntil, map, of, catchError, startWith, observable, Observable} from 'rxjs';
+import {Subject, switchMap, takeUntil, map, of, catchError, startWith, observable,asapScheduler,observeOn, Observable} from 'rxjs';
 import { Api } from '../_services/api';
 import {Header} from '../header/header';
 
@@ -22,7 +22,9 @@ export class ConferenceDetail implements OnInit, OnDestroy {
 
 
   ngOnInit(): void {
+    console.log('conference detail initialized');
     this.vm$ = this.route.paramMap.pipe(
+      observeOn(asapScheduler),
       map(params => params.get('slug')),
       switchMap(slug => {
         if (!slug) {

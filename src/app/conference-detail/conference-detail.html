@@ -159,7 +159,7 @@
                       class="img-fluid object-fit-cover w-100 rounded"
                       src="./confereence-bg.jpg"
                       alt="poster"
-                      />
+                    />
                   </div>
                 </div>
               </div>
@@ -270,15 +270,20 @@
               <div class="panel-header">اطلاعات</div>
               <div class="panel-body d-flex flex-wrap gap-2">
                 <span class="badge bg-soft-secondary text-secondary">
-                  وضعیت: <span [class]="{
-                badge: true,
-                'text-white': true,
-                'bg-success' : c.status == 'ongoing',
+  وضعیت:
+  <span
+    class="badge text-white"
+    [ngClass]="{
+      'bg-success': c.status === 'ongoing',
+      'bg-warning': c.status === 'upcoming',
+      'bg-danger': c.status === 'cancelled',
+      'bg-secondary': !c.status
+    }"
+  >
+    {{ c.status || '—' }}
+  </span>
+</span>
 
-                }">
-                  {{ c.status || '—' }}
-                </span>
-                </span>
 
                 <span class="badge bg-soft-secondary text-secondary">
                   نوع برگزاری: {{ c.is_online ? 'آنلاین' : 'حضوری' }}

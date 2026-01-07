@@ -122,12 +122,24 @@
   border-bottom: 1px dashed #e5e7eb;
   font-size:.9rem;
 }
+/* پیش‌فرض: این استایل اعمال شود */
 .date-row > span:first-child{
-  min-width: 0;          /* ✅ اجازه بده متن سمت چپ جمع بشه */
+  min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;   /* ✅ عنوان تاریخ یک‌خطی شود */
+  white-space: nowrap;
 }
+
+/* در بازهٔ 990px تا 1400px غیرفعال شود */
+@media (min-width: 990px) and (max-width: 1400px) {
+  .date-row > span:first-child{
+    min-width: auto;
+    overflow: visible;
+    text-overflow: initial;
+    white-space: normal;
+  }
+}
+
 .date-row:last-child{ border-bottom:none; }
 
 .date-pill{

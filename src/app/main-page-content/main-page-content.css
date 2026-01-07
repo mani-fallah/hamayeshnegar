@@ -12,16 +12,16 @@
   transform: translateY(-2px);
 }
 
-.poster-wrapper {
-  height: 100%;
+.poster-wrapper{
+  height: 140px;        /* ثابت */
   display: flex;
   align-items: center;
 }
 
-.poster-wrapper img {
-  max-height: 140px;
-  object-fit: cover;
+.poster-wrapper img{
   width: 100%;
+  height: 100%;
+  object-fit: contain;  /* کامل بدون crop */
 }
 
 .conf-title {
@@ -73,3 +73,5 @@
     font-size: 0.9rem;
   }
 }
+
+
